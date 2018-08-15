@@ -34,7 +34,7 @@ var RecordSchema = mongoose.Schema({
     },
     comments: String,
     instruction: {
-        type: mongoose.Types.ObjectId
+        type: mongoose.Schema.ObjectId
     },
     photo: String,
     sent: Boolean,

@@ -1,13 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-
+const cors = require('cors')
 const InstructionController = require('./controllers/instruction-controller')
 const RecordController = require('./controllers/record-controller')
 
 /// set
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+app.use(cors())
 
 app.get('/api/instructions', InstructionController.findAll)
 app.post('/api/instructions', InstructionController.create)
